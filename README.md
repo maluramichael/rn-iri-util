@@ -1,9 +1,6 @@
-# Hydra Transformer #
+# Iri Util #
 
-Hydra isn't that neat to use inside an js application.
-You always have to call properties through the [] operator because all hydra properties have a @ prefix.
-
-This transformer sanitize the hydra response.
+Provide dead simple methods which try to get the id or iri for you.
 
 ### How do I get set up? ###
 
