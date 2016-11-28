@@ -1,0 +1,22 @@
+{
+  "name": "iri-util",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://michaelmalura@bitbucket.org/socialbitgmbh/iri-util.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/socialbitgmbh/iri-util#readme",
+  "dependencies": {
+    "lodash": "^4.17.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
