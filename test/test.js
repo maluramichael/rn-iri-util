@@ -98,6 +98,10 @@ describe('Id utils', function() {
       const id = utils.getId({id: '/api/users/12345'});
       id.should.be.equal('12345');
     });
+    it("{@id: '/api/users/12345', id: '/api/users/6789'}", function() {
+      const id = utils.getId({id: '/api/users/12345'});
+      id.should.be.equal('12345');
+    });
     it("{id: '/api/users/12345/'}", function() {
       const id = utils.getId({id: '/api/users/12345/'});
       id.should.be.equal('12345');
@@ -164,6 +168,10 @@ describe('Iri utils', function() {
     it("{id: '/api/users/12345'}", function() {
       const iri = utils.getIri({id: '/api/users/12345'});
       iri.should.be.equal('/api/users/12345');
+    });
+    it("{@id: '/api/users/12345', id: '/api/users/6789'}", function() {
+      const id = utils.getIri({id: '/api/users/12345'});
+      id.should.be.equal('/api/users/12345');
     });
     it("{id: '/api/users/12345/'}", function() {
       const iri = utils.getIri({id: '/api/users/12345'});
