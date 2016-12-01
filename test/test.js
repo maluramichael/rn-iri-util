@@ -66,11 +66,11 @@ describe('Id utils', function() {
     });
     it("[null, null, null]", function() {
       const id = utils.getId([null, null, null]);
-      expect(id).to.equal(null);
+      expect(id).to.deep.equal([null, null, null]);
     });
     it("[{}, {}, {}]", function() {
-      const id = utils.getId([{}, {}, {}]);
-      expect(id).to.equal(null);
+      const id = utils.getId([null, null, null]);
+      expect(id).to.deep.equal([null, null, null]);
     });
   });
 
@@ -98,6 +98,10 @@ describe('Id utils', function() {
       const id = utils.getId({id: '/api/users/12345'});
       id.should.be.equal('12345');
     });
+    it("{@id: '/api/users/12345', id: '/api/users/6789'}", function() {
+      const id = utils.getId({id: '/api/users/12345'});
+      id.should.be.equal('12345');
+    });
     it("{id: '/api/users/12345/'}", function() {
       const id = utils.getId({id: '/api/users/12345/'});
       id.should.be.equal('12345');
@@ -109,6 +113,13 @@ describe('Id utils', function() {
     it("{id: '/api/users/12345/?seed=0&param1=true'}", function() {
       const id = utils.getId({id: '/api/users/12345/?seed=0&param1=true'});
       id.should.be.equal('12345');
+    });
+  });
+
+  describe('Parse array', function() {
+    it("[{id: '/api/users/12345'}]", function() {
+      const id = utils.getId([{id: '/api/users/12345'}]);
+      id.should.be.deep.equal(['12345']);
     });
   });
 });
@@ -126,11 +137,11 @@ describe('Iri utils', function() {
     });
     it("[null, null, null]", function() {
       const iri = utils.getIri([null, null, null]);
-      expect(iri).to.equal(null);
+      expect(iri).to.deep.equal([null, null, null]);
     });
     it("[{}, {}, {}]", function() {
       const iri = utils.getIri([{}, {}, {}]);
-      expect(iri).to.equal(null);
+      expect(iri).to.deep.equal([null, null, null]);
     });
   });
 
@@ -158,6 +169,10 @@ describe('Iri utils', function() {
       const iri = utils.getIri({id: '/api/users/12345'});
       iri.should.be.equal('/api/users/12345');
     });
+    it("{@id: '/api/users/12345', id: '/api/users/6789'}", function() {
+      const id = utils.getIri({id: '/api/users/12345'});
+      id.should.be.equal('/api/users/12345');
+    });
     it("{id: '/api/users/12345/'}", function() {
       const iri = utils.getIri({id: '/api/users/12345'});
       iri.should.be.equal('/api/users/12345');
@@ -169,6 +184,13 @@ describe('Iri utils', function() {
     it("{id: '/api/users/12345/?seed=0&param1=true'}", function() {
       const iri = utils.getIri({id: '/api/users/12345/?seed=0&param1=true'});
       iri.should.be.equal('/api/users/12345');
+    });
+  });
+
+  describe('Parse array', function() {
+    it("[{id: '/api/users/12345'}]", function() {
+      const id = utils.getIri([{id: '/api/users/12345'}]);
+      id.should.be.deep.equal(['/api/users/12345']);
     });
   });
 });
