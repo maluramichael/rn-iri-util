@@ -19,7 +19,7 @@ iri = getIri({id: '/api/users/1234'}); // iri = '/api/users=1234';
 
 ### Contribution guidelines ###
 
-* Writing tests
+* Writing tests (Running the tests: ```npm start``` in the root directory of the project)
 * Create PRs
 * Do not just change the code style
 
