@@ -1,5 +1,10 @@
 # Iri Util #
 
+<!-- links:start -->
+[![Support me on Ko-fi](https://malura.de/assets/badge/kofi.svg)](https://malura.de/go/kofi?ref=rn-iri-util)
+[![Check out my page](https://malura.de/assets/badge/malura.svg)](https://malura.de/go/site?ref=rn-iri-util)
+<!-- links:end -->
+
 Provide dead simple methods which try to get the id or iri for you.
 
 ### How do I get set up? ###
